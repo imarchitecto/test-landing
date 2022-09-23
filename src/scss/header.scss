@@ -1,0 +1,518 @@
+//====================================================================================================
+.header {
+	background: url('@img/header/info-icons/background.jpg') 50% 0/cover no-repeat;
+	@media(max-width: 1024px) {
+		background: url('@img/header/info-icons/background.jpg') 50% -20px/cover no-repeat;
+	}
+	&__top {}
+	&__body {}
+	&__info-icons {}
+}
+//=================top-header --start-- ===================================================================================
+.top-header {
+	&__container {
+		max-width: rem(1793);
+		padding: 0 rem(10);
+		display: flex;
+		min-height: rem(106);
+		justify-content: space-between;
+		align-items: center;
+		@media(max-width: $mobile) {
+			min-height: rem(76)
+		}
+	}
+	&__logo {
+		@extend %ic;
+		@extend ._icon-logo;
+		@include adaptiveValue("font-size",56,26, 1793,320,1);
+		padding-top: em(35,56);
+		color: $mainDarkColor;
+		@media (max-width: $mobile) {
+			padding-top: 0;
+			align-self: flex-end;
+			z-index: 10;
+		}
+	}
+	&__body {
+		margin-left: rem(25);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: rem(48);
+		@media(max-width: $mobile) {
+			padding-top: 0;
+		}
+	}
+	&__menu {}
+	&__phone {
+		@include adaptiveValue("padding-left",132,35,1793,767.98,1);
+	}
+	&__phone-link {
+		display: inline-flex;
+		align-items: center;
+		font-family: 'Raleway';
+		font-style: normal;
+		font-weight: 500;
+		font-size: rem(26);
+		//@include adaptiveValue("font-size",26,11,1793,320,1);
+		line-height: math.div(26,22);
+		text-transform: uppercase;
+		color: $mainDarkColor;
+		white-space: nowrap;
+		@media (any-hover: hover){
+			&:hover{
+				box-shadow: 12px 15px 10px rgba(240, 228, 228, 0.416);
+			}
+		}
+		@media(max-width: 1012px) {
+			& {
+				span {
+					display: none;
+				}
+			}
+		}
+	 &::before {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		margin: 0 rem(20) 0 0;
+		font-size: rem(26);
+		@include adaptiveValue("font-size",26,11,1793,767.98,1);
+		box-shadow: -4px -4px 20px #FFFFFF, 4px 4px 20px #CFD7D3;
+		width: em(69,26);
+		height: em(69,26);
+		background: linear-gradient(1.36deg, #B0D3CE 12.29%, #FFEDCE 83.89%);
+	 }
+	}
+	&__basket {
+		position: relative;
+		@include adaptiveValue("font-size",33,22,1793,320,1 );
+		color: $mainDarkColor;
+		//padding-left:em(80,33);
+		@include adaptiveValue("margin-left",80,13,1793,767.98,1);
+		&::before {
+		transition: transform 0.8s ease 0s;
+		}
+		span {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: em(19,10);
+			height: em(19,10);
+			border-radius: 50%;
+			background-color: #FFEDCD;
+			top: em(-6,10);
+			right: em(-7,10);
+			font-family: 'Raleway';
+			font-size: rem(10);
+			font-weight: 700;
+			line-height: math.div(12,10);
+			text-transform: uppercase;
+			color: $mainColor;
+			transition: transform 1.5s ease 0s;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				&::before {
+					transform: rotate(-360deg);
+				}
+				span {
+					transform: translate(-15px, 10px);
+				}
+			}
+		}
+	}
+}
+.menu {
+	@media(max-width: $mobile) {
+		display: none;
+		.menu-open & {
+			display: block;
+		}
+	}
+	position: relative;
+	@include adaptiveValue("font-size",16,14,1793,767.98,1);
+	&__icon {}
+	&__body {
+		@media (max-width: $mobile) {
+			.menu-open & {
+				z-index: 1;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+				top: 0;
+				left: 0;
+				overflow: auto;
+				padding: rem(99) 0 0 percent(40,320);
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiveValue("column-gap",87,20,1793,767.98,1);
+		row-gap: rem(10);
+		@media (max-width: $mobile) {
+			.menu-open & {
+				flex-direction: column;
+				//padding: rem(99) 0 0 rem(40);
+			}
+		}
+	}
+	&__item {
+		font-weight: 700;
+		line-height: math.div(19,16);
+		text-transform: uppercase;
+		color: $mainDarkColor;
+		white-space: nowrap;
+		&_spoiler {
+			display: flex;
+			align-items: center;
+			&::before {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border-top: 4px solid transparent;
+				border-left: 6px solid $mainDarkColor;
+				border-bottom: 4px solid transparent;
+				padding-right: rem(10);
+				transition: 0.2s ease all 0.2s;
+			}
+			&._active {
+				&::before {
+					transform: rotate(90deg);
+					padding-right: 0;
+					margin-right: rem(10);
+				}
+			}
+		}
+		@media(max-width: $mobile) {
+			font-weight: 700;
+			font-size: rem(18);
+			line-height: math.div(22,18);
+			text-transform: uppercase;
+			color: $mainDarkColor;
+			row-gap: rem(22);
+			&::before {
+				display: none;
+			}
+		}
+	}
+	&__link {
+		position: relative;
+		text-decoration: underline;
+		&::after {
+			content: "";
+			display: block;
+			height: rem(2);
+			width: 0%;
+			background-color: $mainDarkColor;
+			transition: all 0.3s ease 0s;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&__catalog-list {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		left: rem(-22);
+		padding: em(16,16);
+		transition: opacity 0.4s, visibility 0s linear 0.3s;
+		@include adaptiveValue("font-size",16,14,1793,767.98,1);
+		&__list {
+			display: block;
+			background-color: #FFFEFE;
+			box-shadow: 4px 4px 20px #C2CCCA;
+			border-radius: 8px;
+			padding: em(19,16) em(48,16) em(21,16) em(24,16);
+		}
+		&__item {
+			&:not(:last-child) {
+				margin-bottom: em(19,16);
+			}
+			font-weight: 700;
+			font-size: em(16, 16);
+			line-height: math.div(19,16);
+			text-transform: uppercase;
+			color: $mainDarkColor;
+		}
+		&__link {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&._active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+//=================top-header --end--================================================================================================
+
+//=================body-header --start-- ===================================================================================
+.body-header {
+	@include adaptiveValue("padding-bottom",127,48,1793,767.98,1);;
+	&__container {
+		@include adaptiveValue("padding-top",202,7,1793,767.98,1);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	&__title {
+		padding: 0 0 rem(20) 0;
+		@include adaptiveValue("width",444,202,1793,767.98,1);
+		@include adaptiveValue("height",95,44,1793,767.98,1);
+		img {
+			max-width: 100%;
+		}
+		@media(max-width: $mobile) {
+			padding-bottom: rem(12);
+		}
+	}
+	&__sub-title {
+		font-weight: 400;
+		font-size: rem(50);
+		line-height: math.div(61,50);
+		text-transform: uppercase;
+		color: $mainLightColor;
+		text-align:justify;
+		padding: 0 0 rem(18) 0;
+		@media(max-width: $mobile) {
+			font-size: rem(24);
+			padding-bottom: rem(7);
+		}
+	}
+	&__text {
+		font-family: 'Raleway';
+		font-weight: 400;
+		font-size: rem(14);
+		line-height: math.div(16,14);
+		color: $mainLightColor;
+		padding: 0 0 rem(34) 0;
+		text-align: center;
+		@media(max-width: $mobile) {
+			font-size: rem(12);
+			padding-bottom: rem(21);
+		}
+	}
+	&__button-buy-hedgehog {
+		font-family: 'Raleway';
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: math.div(16,14);
+		background-color: $mainLightColor;
+		color: #FFFFFF;
+		padding: rem(27) rem(117);
+		box-shadow: 4px 4px 20px #C2CCCA, -8px -8px 20px #FFFFFF;
+		border-radius: rem(40);
+		text-align: center;
+		transition: background-color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color:#8bbab2 ;
+			}
+		}
+		@media(max-width: $mobile) {
+			padding: rem(22) rem(93) rem(21) rem(93);
+		}
+	}
+}
+//=================body-header --end-- ===================================================================================
+
+//=================info-icons --start-- ===================================================================================
+.info-icons {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	position: relative;
+	&__hedgehog-left {
+		position: absolute;
+		@include adaptiveValue("bottom",-100,-40,1920,1320,1);
+		left: 0;
+		@include adaptiveValue("width",501,250,1920,1320,1);
+		@include adaptiveValue("height",589,294,1920,1320,1);
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: 1300px) {
+			display: none;
+		}
+	}
+	&__row {
+		//margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(3, rem(190));
+		@include adaptiveValue("column-gap",155,20,1920,768,1);
+		row-gap: rem(20);
+		align-items: end;
+		justify-items: center;
+		@include adaptiveValue("font-size",16,14,1793,767.98,1 );
+		@media(max-width: 1020px) {
+			grid-template-columns: repeat(2, minmax(rem(110),rem(125)));
+			align-items: start;
+		}
+	}
+	&__hedgehog-icon {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media(max-width: 1020px) {
+			align-items: flex-start;
+		}
+	}
+	&__pen {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media(max-width: 1020px) {
+			align-items: flex-start; 
+		}
+		@media(max-width: 577px) {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+	}
+	&__health {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media(max-width: 1020px) {
+			align-items: flex-start;
+			grid-column-start: 2;
+			grid-column-end: 3;
+			grid-row-start: 2;
+			grid-row-end: 3;
+		}
+	}
+	&__img {
+		@include adaptiveValue("width",152,92,1793,767.98,1 );
+		@include adaptiveValue("height",152,92,1793,767.98,1 );
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&_1 {
+			background-color: #FFEDCD;
+			div {
+				@include adaptiveValue("width",72,43,1793,767.98,1 );
+				@include adaptiveValue("height",72,43,1793,767.98,1 );
+			}
+		}
+		&_2 {
+			background-color: #E2F0DF;
+			div {
+				@include adaptiveValue("width",46,30,1793,767.98,1 );
+				@include adaptiveValue("height",46,30,1793,767.98,1 );
+			}
+		}
+		&_3 {
+			background-color: $mainLightColor;
+			div {
+				@include adaptiveValue("width",43,27,1793,767.98,1 );
+				@include adaptiveValue("height",43,27,1793,767.98,1 );
+			}
+		}
+	}
+	&__title {
+		font-family: "Cormorant Infant";
+		font-size: rem(16);
+		line-height: math.div(19,16);
+		text-transform: uppercase;
+		color: $mainDarkColor;
+		font-weight: 700;
+		padding: rem(30) 0 rem(8) 0;
+		@media(max-width: 1020px) {
+			font-size: rem(14);
+		}
+	}
+	&__subtitle {
+		font-family: 'Raleway';
+		font-weight: 400;
+		font-size: em(14,16);
+		line-height: math.div(22,14);
+		text-align: center;
+		color: $mainDarkColor;
+		@media(max-width: 1020px) {
+			font-size: rem(10);
+			text-align: left;
+		} 
+	}
+	&__hedgehog-right {
+		position: absolute;
+		right: 0;
+		bottom: rem(-73);
+		@include adaptiveValue("width",326,207,1540,767.98,1);
+		@include adaptiveValue("height",331,203,1540,767.98,1);
+		@media(max-width: 1020px) {
+			top: rem(-20);
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+//=================info-icons --end-- ===================================================================================
+
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(25);
+		height: rem(14);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: $mainDarkColor;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

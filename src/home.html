@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page page_home">
+				<section class="page__cards cards">
+					<div class="cards__container">
+						<div class="cards__left-arrow _icon-arrow"></div>
+						<div class="cards__row">
+							<div class="cards__slider swiper">
+								<div class="swiper__wrapper swiper-wrapper">
+									<div class="swiper__slide swiper-slide">
+										<div class="cards__card card">
+											<div class="cards__icon-info _icon-info">
+												<div class="cards__icon-info-open">
+													<div class="cards__icon-info-open-pen _icon-pen">привит</div>
+													<div class="cards__icon-info-open-likes">
+														<div class="cards__icon-info-open-likes-image"><img src="@img/content/cards/hearth-helper.svg" alt="Иконка"></div>
+														<div class="cards__icon-info-open-likes-text">1235</div>
+													</div>
+												</div>
+											</div>
+											<div class="card__title">Ежик “Евгений”</div>
+											<div class="card__text">Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой. Ручной, любит внимаение</div>
+											<div class="card__price">
+												<p>3000</p>
+												<p>1500</p>
+											</div>
+											<div class="card__image">
+												<img src="@img/content/cards/hedgehog-left-cards.png" alt="Картинка">
+											</div>
+											<div class="card__button"></div>
+										</div>
+									</div>
+									<div class="swiper__slide swiper-slide">
+										<div class="cards__card card card_2">
+											<div class="cards__icon-info _icon-info">
+												<div class="cards__icon-info-open">
+													<div class="cards__icon-info-open-pen _icon-pen">привит</div>
+													<div class="cards__icon-info-open-likes">
+														<div class="cards__icon-info-open-likes-image"><img src="@img/content/cards/hearth-helper.svg" alt="Иконка"></div>
+														<div class="cards__icon-info-open-likes-text">1235</div>
+													</div>
+												</div>
+											</div>
+											<div class="card__title">Ежик “Максим”</div>
+											<div class="card__text">Немного игривый и задорный характер этого друга никого не оставит равнодушным!</div>
+											<div class="card__price">
+												<p>5000</p>
+												<p>2500</p>
+											</div>
+											<div class="card__image">
+												<img src="@img/content/cards/hedgehog-right-cards.png" alt="Картинка">
+											</div>
+											<div class="card__button"></div>
+										</div>
+									</div>
+									<div class="swiper__slide swiper-slide">
+										<div class="cards__card card">
+											<div class="cards__icon-info _icon-info">
+												<div class="cards__icon-info-open">
+													<div class="cards__icon-info-open-pen _icon-pen">привит</div>
+													<div class="cards__icon-info-open-likes">
+														<div class="cards__icon-info-open-likes-image"><img src="@img/content/cards/hearth-helper.svg" alt="Иконка"></div>
+														<div class="cards__icon-info-open-likes-text">1235</div>
+													</div>
+												</div>
+											</div>
+											<div class="card__title">Ежик “Евгений”</div>
+											<div class="card__text">Очень любит сладости. Маленький сладкоежка=) Мы называем его так между собой. Ручной, любит внимаение</div>
+											<div class="card__price">
+												<p>3000</p>
+												<p>1500</p>
+											</div>
+											<div class="card__image">
+												<img src="@img/content/cards/hedgehog-left-cards.png" alt="Картинка">
+											</div>
+											<div class="card__button"></div>
+										</div>
+									</div>
+									<div class="swiper__slide swiper-slide">
+										<div class="cards__card card card_2">
+											<div class="cards__icon-info _icon-info">
+												<div class="cards__icon-info-open">
+													<div class="cards__icon-info-open-pen _icon-pen">привит</div>
+													<div class="cards__icon-info-open-likes">
+														<div class="cards__icon-info-open-likes-image"><img src="@img/content/cards/hearth-helper.svg" alt="Иконка"></div>
+														<div class="cards__icon-info-open-likes-text">1235</div>
+													</div>
+												</div>
+											</div>
+											<div class="card__title">Ежик “Максим”</div>
+											<div class="card__text">Немного игривый и задорный характер этого друга никого не оставит равнодушным!</div>
+											<div class="card__price">
+												<p>5000</p>
+												<p>2500</p>
+											</div>
+											<div class="card__image">
+												<img src="@img/content/cards/hedgehog-left-cards.png" alt="Картинка">
+											</div>
+											<div class="card__button"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cards__right-arrow _icon-arrow"></div>
+					</div>
+				</div>
+				<form action="#" method="post" enctype="multipart/form-data" class="page__form form">
+					<div class="form__container">
+						<h2 class="form__title">Заполните заявку и мы забронируем для Вас нового друга</h2>
+						<div class="form__radio-row">
+							<div class="form__big-radio">
+								<div class="form__radio-btn">
+									<input id="radio-1" type="radio" name="radio" value="1" checked>
+									<label for="radio-1">хочу ёжика для себя</label>
+								</div>
+								<div class="form__radio-btn">
+									<input id="radio-2" type="radio" name="radio" value="2">
+									<label for="radio-2">хочу ёжика для детей</label>
+								</div>						 
+								<div class="form__radio-btn">
+									<input id="radio-3" type="radio" name="radio" value="3">
+									<label for="radio-3">хочу ёжика для разведения</label>
+								</div>
+							</div>
+							<div class="form__little-radio">
+								<div class="form__radio-btn-lil">
+									<input id="radio1" type="radio" name="radio2" value="1" checked>
+									<label for="radio1">Мне нужен 1-2 ёжика</label>
+								</div> 
+								<div class="form__radio-btn-lil">
+									<input id="radio2" type="radio" name="radio2" value="2">
+									<label for="radio2">Мне нужны 3 и более ёжиков</label>
+								</div>
+								<div class="form__radio-btn-lil">
+									<input id="radio3" type="radio" name="radio2" value="3">
+									<label for="radio3">Мне нужны 3-4 ёжика</label>
+								</div>
+								<div class="form__radio-btn-lil">
+									<input id="radio4" type="radio" name="radio2" value="3">
+									<label for="radio4">Пока присматриваюсь</label>
+								</div>
+							</div>
+						</div>
+						<div class="form__enter-area">
+							<div class="form__person-info person-info">
+								<div class="person-info__enter-block">
+									<input autocomplete="off" type="text" name="name" placeholder="Ваше имя" class="person-info__input">
+								</div>
+								<div class="person-info__enter-block">
+									<input autocomplete="off" type="tel" name="phone" placeholder="Ваш телефон" class="person-info__input">
+								</div>
+								<div class="person-info__enter-block">
+									<input autocomplete="off" type="text" name="email" data-error="Введен неверный email" placeholder="Ваш email" class="person-info__input">
+								</div>
+							</div>
+							<div class="form__text-area">
+								<textarea name="text" placeholder="Кооментарий к заявке" data-autoheight data-autoheight-min="108"></textarea>
+							</div>
+						</div>
+						<button type="submit" class="form__button">Купить ёжика</button>
+					</div>
+				</form>
+				<section class="page__actions actions">
+					<div class="actions__container">
+						<div class="actions__title">
+							<div class="actions__image"><img src="@img/content/actions/openmoji_hedgehog.png" alt="Иконка"></div>
+							<div class="actions__text">У на осталось еще: <a href="#">25 ёжиков</a></div>
+						</div>
+						<div class="actions__sub-title">Торопитесь! Акция действует до 26. 02. 2023</div>
+					</div>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
